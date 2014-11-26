@@ -1,5 +1,5 @@
 name: pretty-slack-notify
-version: 0.2.5
+version: 0.2.6
 description: Posts wercker build/deploy status to a Slack channel
 keywords:
   - notification
@@ -17,13 +17,13 @@ properties:
     required: false
   build_success_message:
     type: string
-    required: true
+    required: false
   build_failed_message:
     type: string
-    required: true
+    required: false
   deploy_success_message:
     type: string
-    required: true
+    required: false
   deploy_failed_message:
     type: string
-    required: true
+    required: false

@@ -9,10 +9,10 @@ require "slack-notifier"
 webhook_url = ENV["WERCKER_PRETTY_SLACK_NOTIFY_WEBHOOK_URL"]
 channel     = ENV["WERCKER_PRETTY_SLACK_NOTIFY_CHANNEL"]
 username    = ENV["WERCKER_PRETTY_SLACK_NOTIFY_USERNAME"]
-$build_success_message = ENV["WERCKER_PRETTY_SLACK_NOTIFY_BUILD_SUCCESS_MESSAGE"]
-$build_failed_message = ENV["WERCKER_PRETTY_SLACK_NOTIFY_BUILD_FAILED_MESSAGE"]
-$deploy_success_message = ENV["WERCKER_PRETTY_SLACK_NOTIFY_DEPLOY_SUCCESS_MESSAGE"]
-$deploy_failed_message = ENV["WERCKER_PRETTY_SLACK_NOTIFY_DEPLOY_FAILED_MESSAGE"]
+$build_success_message = ENV["WERCKER_PRETTY_SLACK_NOTIFY_BUILD_SUCCESS_MESSAGE"] || ""
+$build_failed_message = ENV["WERCKER_PRETTY_SLACK_NOTIFY_BUILD_FAILED_MESSAGE"] || ""
+$deploy_success_message = ENV["WERCKER_PRETTY_SLACK_NOTIFY_DEPLOY_SUCCESS_MESSAGE"] || ""
+$deploy_failed_message = ENV["WERCKER_PRETTY_SLACK_NOTIFY_DEPLOY_FAILED_MESSAGE"] || ""
 
 abort "Please specify the your slack webhook url" unless webhook_url
 username = "Wercker"                              unless username
